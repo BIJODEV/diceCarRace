@@ -1,0 +1,48 @@
+/* body {
+    overflow: hidden;
+} */
+.car-images {
+    display: grid;
+    margin-top: 0%;
+    margin: 0 10px;
+    padding: 10px;
+    /* max-height: 100px;
+    max-width: 500px; */
+    /* position: relative; */
+    float: left;
+    /* width: 99vw; */
+}
+
+.back-img {
+    display:grid;
+    height:620px;
+    width:75%;
+}
+
+.photo {
+    max-width: 30%;
+    padding: 0 2px;
+    height: 150px;
+    float:left;
+    row-gap: 1ch;
+    max-height: 100px;
+    max-width: 500px;
+}
+
+.photo img {
+    max-height: 100px;
+    max-width: 500px;
+    row-gap: 1ch;
+    /* background-position: center left; */
+}
+
+.dice-img{ 
+    position: fixed; 
+    max-height: 140px;
+    max-width: 500px;
+    right: 0; 
+    bottom: 0;
+}
+.dice-img:hover{
+    cursor: pointer;
+}
