@@ -29,11 +29,27 @@ function moveCar() {
   ) {
     const carId = `car${random}`;
     const car = document.getElementById(carId);
+    const carWidth = car.offsetWidth
     car.style.position = "relative";
     car.style.setProperty("left", `${(carPositions[carId] += distance)}px`);
-    if (car.offsetLeft > screenWidth ) {
-      console.log(`Player ${random} has won`);
+    // if (car.offsetLeft > screenWidth )
+    if (carPositions[carId] + carWidth > screenWidth - 50)  {
       gameOver = true;
+      change.remove();
+
+    const resultElement = document.createElement("div");
+    resultElement.textContent = `Player ${random} has won`;
+    resultElement.style.position = "absolute";
+    resultElement.style.top = "40%";
+    resultElement.style.left = "50%";
+    resultElement.style.transform = "translate(-50%, -50%)";
+    resultElement.style.fontSize = "70px";
+    resultElement.style.fontWeight = "bold";
+    resultElement.style.color = "white";
+    document.body.appendChild(resultElement); 
+
+    // dim the background image
+     document.body.style.opacity = "0.5";  // set the opacity to 0.5
     }
   }
 }

@@ -1,6 +1,26 @@
-/* body {
-    overflow: hidden;
-} */
+h1 {
+    border-bottom: 1px dotted white;
+    animation: blink 1s infinite;
+    color : white;
+  }
+  
+  @keyframes blink {
+    50% {
+      color: transparent;
+    }
+  }
+
+  h1::before {
+    margin-top: 10px;
+    content: "";
+    border-bottom: 1px dotted white;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+.bg-color{
+    background-color: black;
+  }
 .car-images {
     display: grid;
     margin-top: 0%;
