@@ -102,6 +102,11 @@ h1 {
     max-width: 100%;
     height: auto;
   }
+    
+.car-images {
+  overflow: hidden;
+}
+
 
   /* Add any additional styles for smaller screens */
 }
