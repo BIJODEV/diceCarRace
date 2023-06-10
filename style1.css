@@ -1,0 +1,91 @@
+h1 {
+    border-bottom: 1px dotted white;
+    animation: blink 1s infinite;
+    color : white;
+  }
+  
+  @keyframes blink {
+    50% {
+      color: transparent;
+    }
+  }
+
+  h1::before {
+    margin-top: 10px;
+    content: "";
+    border-bottom: 1px dotted white;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+.bg-color{
+    background-color: black;
+  }
+.car-images {
+    display: grid;
+    margin-top: 0%;
+    margin: 0 10px;
+    padding: 10px;
+    /* max-height: 100px;
+    max-width: 500px; */
+    /* position: relative; */
+    float: left;
+    /* width: 99vw; */
+}
+
+.back-img {
+    display:grid;
+    height:620px;
+    width:75%;
+}
+
+.photo {
+    max-width: 30%;
+    padding: 0 2px;
+    height: 150px;
+    float:left;
+    row-gap: 1ch;
+    max-height: 100px;
+    max-width: 500px;
+}
+
+.photo img {
+    max-height: 100px;
+    max-width: 500px;
+    row-gap: 1ch;
+    /* background-position: center left; */
+}
+
+.photo:hover:after:hover {
+    opacity: 1;
+} 
+
+.photo:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+  }
+
+  
+.dice-img{ 
+    position: fixed; 
+    max-height: 140px;
+    max-width: 500px;
+    right: 0; 
+    bottom: 0;
+}
+.dice-img:hover{
+    cursor: pointer;
+}
+
+.photo:hover img {
+    opacity: 0.7;
+}
+  
+.photo:hover {
+    transform: scale(1.1);
+}
