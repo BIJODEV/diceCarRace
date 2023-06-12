@@ -1,11 +1,13 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="next-auth.js"></script>
     <title>diceCarRace</title>
     <link rel="stylesheet" type="text/css" href="style1.css" />
   </head>
   <body class="bg-color">
     <h1 style="text-align: center;" id="game-over">Dice-Car-Race</h1>
+<div id="game-container" style="display: none;">
     <div class="car-images" id="carRace">
         <div class="photo">
             <img id="car1" data-text="Car 1" src="cars/car1.jpeg" alt="photo"/>
@@ -31,9 +33,56 @@
             <img id="car6" data-text="Car 6" src="cars/car6.jpeg" alt="photo" />
         </div>
     </div>
+
     <img class="dice-img" id="diceImg" src="diceImg/dice1.jpeg" onclick="moveCar()" />
     <img class="back-img" id="raceboard" src="racecourse/racetrack.jpeg" />
+</div>
+
+    <div id="google-signin-container">
+        <div id="google-signin-button"></div>
+    </div>
+
+    <script>
+      // Function to initialize and render the Google Sign-In button
+      function initializeGoogleSignIn() {
+        google.accounts.id.initialize({
+          client_id: '41790384339-c1tedjaiv70mge0793gm25c242lm3o44.apps.googleusercontent.com',
+          callback: handleCredentialResponse
+        });
+
+        google.accounts.id.renderButton(
+          document.getElementById('google-signin-button'),
+          { theme: 'outline', size: 'large' }
+        );
+      }
+
+      // Callback function to handle the response after sign-in
+      function handleCredentialResponse(response) {
+        if (response.credential) {
+          // User is signed in, show the game container
+          document.getElementById('game-container').style.display = 'block';
+          document.getElementById('google-signin-container').style.display = 'none';
+
+          // Proceed with the game initialization or any other logic
+          initializeGame();
+        } else {
+          // User is not signed in, show the sign-in container
+          document.getElementById('game-container').style.display = 'none';
+          document.getElementById('google-signin-container').style.display = 'block';
+        }
+      }
+
+      // Function to initialize the game logic
+      function initializeGame() {
+        // Initialize the game here
+      }
+
+      // Call the initialization function after the page has finished loading
+      window.onload = initializeGoogleSignIn;
+    </script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="script2.js"></script>
   </body>
 
-  <script src="script2.js" ></script>
 </html>
